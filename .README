@@ -25,3 +25,4 @@
  16.1)"start:docker": "npm run build && node --inspect=0.0.0.0 dist/src/index.js"  -enabls debugging for node
  16.2) .vscode -> launvh.json-> settings for debugger
  16.3) for breakpoint write "debugger" above the line
+ 17) to makes on service ran before another we make one depended to another the inside backend service-> depends_on:- postgres
