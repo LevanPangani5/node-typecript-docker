@@ -1,0 +1,12 @@
+1) npm init -y
+2)node -v > .nvmrc
+3)npm i typecript
+4) npm i --save-dev @tsconfig/node18 - tsconfig base configuration so you don\'t need to do it 
+5)npm i -D @types/node -adds esentioal types for node
+6) makes sure vscode is using same ts version we are using:
+(dir).vscode -> settings.json -> "typescript.tsdk": "node_modules/typescript/lib"
+7) npm i -D @swc/cli @swc/core rimraf swc -typescript compiler:
+"build":"rimraf dist && swc ./src -d dist" after &&: compile everything in /src and put it in dist -d == destination
+8) create .swcrc
+9)git config --global init.defaultBranch main  - sets default brach to main
+
