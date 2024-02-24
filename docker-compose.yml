@@ -1,0 +1,12 @@
+services:
+  backend: #name of the service
+    build: . #we either give image or Dockerfile to build to docker-compose . meeans find Dockerfile in the local dir
+    ports:
+      - 5000:5000 #port mapping
+      - 9229:9229 #for debugging
+    volumes:
+      - .:/usr/src/app #map local machine's current dir to cocker's provided path so they update with eachother
+      - /usr/src/app/node_modules #tells docker that node_modules inside it is independent thing we don't want it interacting with local
+    command: npm run start:docker
+    environment:
+      PORT: 5000

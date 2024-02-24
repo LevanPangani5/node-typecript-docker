@@ -9,4 +9,19 @@
 "build":"rimraf dist && swc ./src -d dist" after &&: compile everything in /src and put it in dist -d == destination
 8) create .swcrc
 9)git config --global init.defaultBranch main  - sets default brach to main
-
+10) npm i -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser  - eslint
+11) npm i -D prettier eslint-config-prettier  - prettier pretier config gor eslint
+12)npm i express morgan
+12.2) npm -D @types/express @types/morgan
+13) create Dockerfile -> COPY package.json package-lock.json ./ copy this to files in our docker current dir ==./
+13.2)RUN npm i --frozen-lockfile  ---frozen-lockfile ensures that lock file does not change during instaltion
+13.3) COPY . . copy everything from teh current dir to docker dir  except whats inside .dockerignore
+14) docker compose up
+15)make docker restart on save 
+15.1)option 1: download extention Trigger Task on Save . .vscode -> tasks.json it\'s where we configure tasks
+ .vscode-> settings we specify when we want this task to be triggered
+ 15.2)option 2: creat listning process npm i -D watchy //prefer 2end option
+ 16)debuggin
+ 16.1)"start:docker": "npm run build && node --inspect=0.0.0.0 dist/src/index.js"  -enabls debugging for node
+ 16.2) .vscode -> launvh.json-> settings for debugger
+ 16.3) for breakpoint write "debugger" above the line
